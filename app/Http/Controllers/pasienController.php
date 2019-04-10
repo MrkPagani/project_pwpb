@@ -14,6 +14,7 @@ class pasienController extends Controller
 
     public function input(){
       return view('pasien.form-pasien');
+      // kmkmkm
     }
 
     public function store(Request $request)
@@ -23,7 +24,7 @@ class pasienController extends Controller
         'gender' => 'required',
         'golongan_darah' => 'required',
         'tempat_lahir' => 'required|string',
-        'tanggal_lahir' => 'required|numeric',
+        'tanggal_lahir' => 'required',
         'nama_ibu' => 'required|string',
         'status_menikah' => 'required',
       ];
@@ -53,7 +54,7 @@ class pasienController extends Controller
         'gender' => 'required',
         'golongan_darah' => 'required',
         'tempat_lahir' => 'required|string',
-        'tanggal_lahir' => 'required|numeric',
+        'tanggal_lahir' => 'required',
         'nama_ibu' => 'required|string',
         'status_menikah' => 'required',
       ];
@@ -61,6 +62,7 @@ class pasienController extends Controller
       $input = $request->all();
       unset($input['_token']);
       unset($input['_method']);
+      //kombawa
 
       $status = \DB::table('t_pasien')->where('id',$id)->update($input);
 
