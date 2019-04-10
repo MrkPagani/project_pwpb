@@ -7,6 +7,15 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
 
+    use AuthenticatesUsers;
+
+
+    public function __construct()
+    {
+        $this->middleware('guest')->except('logout');
+    }
+
+
     public function signUp()
     {
         return view('auth.register');
@@ -28,6 +37,6 @@ class UserController extends Controller
         return redirect()->back();
     }
 
-    public function postSignIn(Request $request)
+    public function showLogin()
     { }
 }
