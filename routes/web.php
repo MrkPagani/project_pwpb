@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/signup/create', 'UserController@SignUp');
+Route::post('/signup', 'UserController@postSignUp');
+
 Route::get('/index', function () {
     return view('home.home');
 });
