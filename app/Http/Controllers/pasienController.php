@@ -14,6 +14,7 @@ class pasienController extends Controller
 
     public function input(){
       return view('pasien.form-pasien');
+      // kmkmkm
     }
 
     public function store(Request $request)
@@ -61,6 +62,7 @@ class pasienController extends Controller
       $input = $request->all();
       unset($input['_token']);
       unset($input['_method']);
+      //kombawa
 
       $status = \DB::table('t_pasien')->where('id',$id)->update($input);
 
