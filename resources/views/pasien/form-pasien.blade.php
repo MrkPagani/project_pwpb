@@ -68,31 +68,6 @@
             <label for="inputAddress2">Tanggal Lahir</label>
             <input type="text" class="form-control" id="inputAddress2"  placeholder="YYYY/mm/dd" name="tanggal_lahir">
         </div>
-        <!-- <div class="form-row">
-            <div class="form-group col-md-4">
-                <label for="inputState">Tanggal</label>
-                <select id="inputState" class="form-control">
-                    <option selected>Pilih Tanggal</option>
-                    @for($i = 1 ; $i <= 31 ; $i++)
-                    <option>{{$i}}</option>
-                    @endfor
-                </select>
-            </div>
-            <div class="form-group col-md-4">
-                <label for="inputState">Bulan</label>
-                <select id="inputState" class="form-control">
-                    <option selected>Pilih Bulan</option>
-                    <option>Januari</option>
-                </select>
-            </div>
-            <div class="form-group col-md-4">
-                <label for="inputState">Tahun</label>
-                <select id="inputState" class="form-control">
-                    <option selected>Pilih Tahun</option>
-                    <option>1999</option>
-                </select>
-            </div>
-        </div> -->
         <div class="form-group">
             <label for="inputAddress2">Nama Ibu</label>
             <input type="text" class="form-control" id="inputAddress2" name="nama_ibu" placeholder="Masukan Nama Ibu">

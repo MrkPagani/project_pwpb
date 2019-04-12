@@ -55,7 +55,7 @@
             </div>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{url('data-dokter')}}">
+                <a class="nav-link" href="{{url('/data-dokter')}}">
                     <i class="fas fa-stethoscope"></i>
                     <span>Data Dokter</span></a>
             </li>
@@ -188,7 +188,7 @@
                     <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                     <div class="modal-footer">
                         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <a class="btn btn-primary" href="login.html">Logout</a>
+                        <a class="btn btn-primary" href="{{ url('/signup/create')}}">Logout</a>
                     </div>
                 </div>
             </div>

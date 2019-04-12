@@ -12,7 +12,7 @@
 
 
         <div class="card-header py-3">
-            <a href="#" class="btn btn-success btn-icon-split">
+            <a href="{{ url ('data-spesialis/add-spesialis') }}" class="btn btn-success btn-icon-split">
                 <span class="icon text-white-50">
                     <i class="fas fa-plus"></i>
                 </span>
@@ -65,4 +65,4 @@
 
 </div>
 <!-- End of Main Content -->
-@endsection 
+@endsection
