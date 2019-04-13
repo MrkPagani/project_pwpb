@@ -1,4 +1,4 @@
-@extends('layouts.auth')
+@extends('layouts.blank')
 @section('title','Halaman Register')
 
 @section('content')
