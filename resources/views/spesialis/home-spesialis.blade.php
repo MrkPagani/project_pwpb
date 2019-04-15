@@ -3,7 +3,6 @@
 @section('content')
 <!-- Begin Page Content -->
 <div class="container-fluid">
-
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -12,9 +11,9 @@
 
 
         <div class="card-header py-3">
-            <a href="{{ url ('data-spesialis/add-spesialis') }}" class="btn btn-success btn-icon-split">
+
                 <span class="icon text-white-50">
-                    <i class="fas fa-plus"></i>
+                    <i class="fas fa-plus justify-content-center mt-1"></i>
                 </span>
                 <span class="text">Tambah</span>
             </a>
@@ -35,25 +34,27 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($spesialis as $row)
                         <tr>
                             <td>1</td>
-                            <td>1</td>
-                            <td>Jantung</td>
+                            <td>{{$row->id}}</td>
+                            <td>{{$row->nama_spesialis}}</td>
                             <td>
                                 <center>
-                                    <a href="#" class="btn btn-warning btn-circle">
-                                        <i class="fas fa-user-edit"></i>
-                                    </a>
+                                    <button class=" btn btn-warning btn-circle" data-toggle="modal" data-target="#edit" data-spesialis="{{$row->nama_spesialis}}" data-id={{$row->id}}>
+                                        <i class=" fas fa-user-edit"></i>
+                                    </button>
                                 </center>
                             </td>
                             <td>
                                 <center>
-                                    <a href="#" class="btn btn-danger btn-circle ml-1">
-                                        <i class="fas fa-trash"></i>
-                                    </a>
+                                    <button class="btn btn-danger" data-toggle="modal" data-target="#delete" data-id_spesialis="{{$row->id}}" data-spesialis="{{$row->nama_spesialis}}">
+                                        <i class=" fas fa-trash"></i>
+                                    </button>
                                 </center>
                             </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -65,4 +66,4 @@
 
 </div>
 <!-- End of Main Content -->
-@endsection
+

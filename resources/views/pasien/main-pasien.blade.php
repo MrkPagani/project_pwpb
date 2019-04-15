@@ -10,15 +10,15 @@
             <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
             <br>
             @if(session('success'))
-              <div class="alert alert-success">
+            <div class="alert alert-success">
                 {{ session ('success') }}
-              </div>
+            </div>
             @endif
 
             @if(session('error'))
-              <div class="alert alert-error">
+            <div class="alert alert-error">
                 {{ session ('error') }}
-              </div>
+            </div>
             @endif
         </div>
 
@@ -36,30 +36,25 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
+                            <th>No</th>
                             <th>No RM</th>
                             <th>Nama Pasien</th>
                             <th>Gender</th>
-                            <th>Golongan Darah</th>
-                            <th>Tempat Lahir</th>
-                            <th>Tanggal Lahir</th>
-                            <th>Nama Ibu</th>
-                            <th>Status Menikah</th>
+                            <th>Nama Penanggung Jawab</th>
                             <th colspan="2">
                                 <center>Action</center>
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                      @foreach($pasien as $row)
+                        @foreach($pasien as $row)
                         <tr>
                             <td>{{isset($i) ? ++$i : $i = 1 }}</td>
+                            <td>{{$row->no_rm}}</td>
                             <td>{{$row->nama_pasien}}</td>
                             <td>{{$row->gender}}</td>
-                            <td>{{$row->golongan_darah}}</td>
-                            <td>{{$row->tempat_lahir}}</td>
-                            <td>{{$row->tanggal_lahir}}</td>
-                            <td>{{$row->nama_ibu}}</td>
-                            <td>{{$row->status_menikah}}</td>
+                            <td>{{$row->penanggung_jawab}}</td>
+
                             <td>
                                 <center>
                                     <a href="{{ url('/pasien/' . $row->id . '/edit' )}}" class="btn btn-warning btn-circle">
@@ -69,13 +64,13 @@
                             </td>
                             <td>
                                 <center>
-                                  <form class="" action="{{ url('/pasien/' . $row->id) }}" method="post">
-                                    @method('DELETE')
-                                    @csrf
-                                    <button class="btn btn-danger btn-circle ml-1" type="submit" name="button">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                  </form>
+                                    <form class="" action="{{ url('/pasien/' . $row->id) }}" method="post">
+                                        @method('DELETE')
+                                        @csrf
+                                        <button class="btn btn-danger btn-circle ml-1" type="submit" name="button">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </form>
                                 </center>
                             </td>
                         </tr>

@@ -18,6 +18,16 @@
     <!-- Custom styles for this template-->
     <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
 
+    <!-- sweet alert -->
+    <link rel=”stylesheet” href=" {{asset('dist/sweetalert2.css')}}">
+
+    <!-- Datepicker -->
+    <link rel=”stylesheet” href=" {{asset('css/bootstrap-datepicker.min.css')}}">
+
+    <!-- sweet alert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    @include('sweet::alert')
+
 </head>
 
 <body id="page-top">
@@ -29,7 +39,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{url('/index')}}">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{url('/')}}">
                 <div class="sidebar-brand-icon">
                     <i class="fas fa-clinic-medical"></i>
                 </div>
@@ -41,7 +51,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="{{url('/index')}}">
+                <a class="nav-link" href="{{url('/')}}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -55,14 +65,13 @@
             </div>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{url('/data-dokter')}}">
-                    <i class="fas fa-stethoscope"></i>
+
                     <span>Data Dokter</span></a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="{{url('/pasien')}}">
-                    <i class="fas fa-stethoscope"></i>
+                    <i class="fas fa-procedures"></i>
                     <span>Data Pasien</span></a>
             </li>
 
@@ -77,9 +86,29 @@
                         <h6 class="collapse-header">Data Master</h6>
                         <a class="collapse-item" href="{{url('/data-spesialis')}}">Data Spesialis</a>
                         <a class="collapse-item" href="{{url('/data-ruangan')}}">Data Ruangan</a>
+                        <a class="collapse-item" href="{{url('/data-gedung')}}">Data Gedung</a>
                     </div>
                 </div>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('main-pendaftaran')}}">
+                    <i class="fas fa-scroll"></i>
+                    <span>Form Pendaftaran</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('main-tempat-tidur')}}">
+                    <i class="fas fa-bed"></i>
+                    <span>Data Tempat Tidur</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{url('main-rawat-jalan')}}">
+                    <i class="fas fa-bed"></i>
+                    <span>Laporan Rawat Jalan</span></a>
+            </li>
+
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
@@ -203,7 +232,13 @@
 
         <!-- Custom scripts for all pages-->
         <script src="{{asset('js/sb-admin-2.min.js')}}"></script>
+        <script src="{{asset('js/app.js')}}"></script>
 
+        <!-- date picker -->
+        <script src="{{asset('js/bootstrap-datepicker.min.js')}}"></script>
+
+
+        @yield('js')
 </body>
 
 </html>

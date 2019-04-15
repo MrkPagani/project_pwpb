@@ -1,3 +1,7 @@
+@extends('layouts.auth')
+@section('title','Halaman Register')
+
+@section('content')
 <div class="container">
 
     <!-- Outer Row -->
@@ -46,3 +50,4 @@
     </div>
 
 </div>
+@endsection

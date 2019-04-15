@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class UserController extends Controller
 {
@@ -38,5 +39,20 @@ class UserController extends Controller
     }
 
     public function showLogin()
-    { }
+    {
+        return view('auth.login');
+    }
+
+    public function validateLogin(Request $request)
+    {
+        $this->validate($request, [
+            'email' => 'required|string',
+            'password' => 'required'
+        ]);
+
+        $loggedIn = \Auth::attempt([
+            'email' => $request->email,
+            'password' => $request->password
+        ], $remember);
+    }
 }
