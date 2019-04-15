@@ -5,7 +5,7 @@
 <div class="container-fluid">
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
-
+        <p>{{$random}}</p>
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
         </div>
@@ -42,7 +42,7 @@
                             <td>{{$row->nama_gedung}}</td>
                             <td>
                                 <center>
-                                    <button class=" btn btn-warning btn-circle" data-toggle="modal" data-target="#editGedung" data-id_gedung="{{$row->id_id}}" data-nama_gedung="{{$row->nama_gedung}}">
+                                    <button class=" btn btn-warning btn-circle" data-toggle="modal" data-target="#editGedung" data-id_gedung="{{$row->id}}" data-nama_gedung="{{$row->nama_gedung}}">
                                         <i class=" fas fa-user-edit"></i>
                                     </button>
                                 </center>
@@ -88,6 +88,9 @@
                         <input type="hidden" id="id_gedung" name="id_gedung">
                         <label for="exampleFormControlInput1">Nama gedung</label>
                         <input type="text" class="form-control" placeholder="Masukkan Nama gedung" name='nama_gedung' id="nama_gedung">
+                        @if($errors->has('nama_gedung'))
+                        <small id="emailHelp" class="form-text text-danger"><strong>{{$errors->first()}}</strong></small>
+                        @endif
                     </div>
                     <button type="submit" name="submit" class="btn btn-primary">Update</button>
                 </form>
@@ -114,6 +117,9 @@
                         <input type="hidden" id="id_gedung" name="id_gedung">
                         <label for="exampleFormControlInput1">Nama Gedung</label>
                         <input type="text" class="form-control" placeholder="Masukkan Nama Gedung" name='nama_gedung' id="nama_gedung">
+                        @if($errors->has('nama_gedung'))
+                        <small id="emailHelp" class="form-text text-danger"><strong>{{$errors->first()}}</strong></small>
+                        @endif
                     </div>
                     <button type="submit" name="submit" class="btn btn-primary">Tambah</button>
                 </form>

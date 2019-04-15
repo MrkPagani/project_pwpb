@@ -10,6 +10,8 @@ class GedungController extends Controller
     public function index()
     {
         $data['gedung'] = \App\Gedung::get();
+        $dati = 0000;
+        $data['random'] = "ID000" . rand(0, 1000);
         return view('gedung.main-gedung', $data);
     }
 

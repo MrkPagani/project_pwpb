@@ -21,6 +21,9 @@
     <!-- sweet alert -->
     <link rel=”stylesheet” href=" {{asset('dist/sweetalert2.css')}}">
 
+    <!-- Datepicker -->
+    <link rel=”stylesheet” href=" {{asset('css/bootstrap-datepicker.min.css')}}">
+
     <!-- sweet alert -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     @include('sweet::alert')
@@ -36,7 +39,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{url('/index')}}">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{url('/')}}">
                 <div class="sidebar-brand-icon">
                     <i class="fas fa-clinic-medical"></i>
                 </div>
@@ -48,7 +51,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="{{url('/index')}}">
+                <a class="nav-link" href="{{url('/')}}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -63,13 +66,13 @@
 
             <li class="nav-item">
                 <a class="nav-link" href="{{url('data-dokter')}}">
-                  <i class="fas fa-user-md"></i>
+                    <i class="fas fa-user-md"></i>
                     <span>Data Dokter</span></a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="{{url('/pasien')}}">
-                  <i class="fas fa-procedures"></i>
+                    <i class="fas fa-procedures"></i>
                     <span>Data Pasien</span></a>
             </li>
 
@@ -232,7 +235,8 @@
         <script src="{{asset('js/sb-admin-2.min.js')}}"></script>
         <script src="{{asset('js/app.js')}}"></script>
 
-
+        <!-- date picker -->
+        <script src="{{asset('js/bootstrap-datepicker.min.js')}}"></script>
 
 
         @yield('js')

@@ -87,6 +87,9 @@
                         <input type="hidden" id="id_spesialis" name="id_spesialis">
                         <label for="exampleFormControlInput1">Nama Spesialis</label>
                         <input type="text" class="form-control" placeholder="Masukkan Nama Spesialis" name='nama_spesialis' id="nama_spesialis">
+                        @if($errors->has('nama_spesialis'))
+                        <small id="emailHelp" class="form-text text-danger"><strong>{{$errors->first()}}</strong></small>
+                        @endif
                     </div>
                     <button type="submit" name="submit" class="btn btn-primary">Tambah</button>
                 </form>
@@ -124,6 +127,9 @@
                         <input type="hidden" id="id_spesialis" name="id_spesialis">
                         <label for="exampleFormControlInput1">Nama Spesialis</label>
                         <input type="text" class="form-control" placeholder="Masukkan Nama Spesialis" name='nama_spesialis' id="nama_spesialis">
+                        @if($errors->has('nama_spesialis'))
+                        <small id="emailHelp" class="form-text text-danger"><strong>{{$errors->first()}}</strong></small>
+                        @endif
                     </div>
                     <button type="submit" name="submit" class="btn btn-primary">Tambah</button>
                 </form>

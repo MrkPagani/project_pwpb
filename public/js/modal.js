@@ -40,3 +40,32 @@ $('#deleteGedung').on('show.bs.modal', function (event) {
     modal.find('.modal-footer #id_gedung').val(id_gedung)
 
 })
+
+
+$('#editRuangan').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget) // Button that triggered the modal
+    var nama_gedung = button.data('gedung')
+    var id_gedung = button.data('id_gedung')
+    var id_ruangan = button.data('id_ruangan')
+    var no_ruangan = button.data('no_ruangan')
+    var nama_ruangan = button.data('nama_ruangan')
+    var harga = button.data('harga')
+    console.log(nama_gedung)
+    var modal = $(this)
+    // modal.find('.modal-body .form-control').attr("<option value = '" + id_gedung + "'>" + nama_gedung + "</option>")
+    modal.find('.modal-body #no_ruangan').val(no_ruangan)
+    modal.find('.modal-body #nama_ruangan').val(nama_ruangan)
+    modal.find('.modal-body #harga').val(harga)
+    modal.find('.modal-body #id_ruangan').val(id_ruangan)
+
+})
+$('#deleteRuangan').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget) // Button that triggered the modal
+    var nama_ruangan = button.data('nama_ruangan')
+    var id_ruangan = button.data('id_ruangan')
+    console.log(id_ruangan)
+    var modal = $(this)
+    modal.find('.modal-body').html("Apakah yakin anda akan menghapus Ruangan <b> " + nama_ruangan + "</b>")
+    modal.find('.modal-footer #id_ruangan').val(id_ruangan)
+
+})
