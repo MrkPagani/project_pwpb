@@ -19,16 +19,17 @@ Route::get('/', function () {
     return view('home.home');
 });
 
-// Route Dokter
-Route::get('data-dokter', 'dokterController@index');
+
 Route::get('/data-dokter/{id}/edit', 'dokterController@edit');
-Route::get('data-dokter/add-dokter', 'dokterController@create');
+Route::patch('/data-dokter/{id}', 'dokterController@update');
+Route::delete('/data-dokter/{id}', 'dokterController@destroy');
+
 
 
 // Route Pasien
 Route::get('/pasien', 'pasienController@index');
 Route::get('pasien/add-pasien', 'pasienController@input');
-Route::post('pasien', 'pasienController@store');
+Route::post('/pasien', 'pasienController@store');
 Route::get('/pasien/{id}/edit', "pasienController@edit");
 Route::patch('/pasien/{id}', 'pasienController@update');
 Route::delete('/pasien/{id}', 'pasienController@destroy');
@@ -36,11 +37,7 @@ Route::delete('/pasien/{id}', 'pasienController@destroy');
 
 //  Route Spesialis
 Route::get('/data-spesialis', 'SpesialisController@index');
-Route::post('/spesialis', 'SpesialisController@store');
-Route::patch('/spesialis/update', 'SpesialisController@update');
-Route::delete('/spesialis/delete', 'SpesialisController@destroy');
 
-// Route Ruangan
 
 Route::get('/data-ruangan', 'RuanganController@index');
 Route::post('/data-ruangan/add', 'RuanganController@store');

@@ -19,7 +19,7 @@
                 <span class="text">Tambah</span>
             </a>
         </div>
-        
+
 
         <div class="card-body">
             <div class="table-responsive">
@@ -55,9 +55,13 @@
                             </td>
                             <td>
                                 <center>
-                                    <a href="#" class="btn btn-danger btn-circle ml-1">
+                                  <form class="" action="{{ url('/data-dokter/' . $row->id) }}" method="post">
+                                    @method('DELETE')
+                                    @csrf
+                                    <button class="btn btn-danger btn-circle ml-1" type="submit" name="button">
                                         <i class="fas fa-trash"></i>
-                                    </a>
+                                    </button>
+                                  </form>
                                 </center>
                             </td>
                         </tr>

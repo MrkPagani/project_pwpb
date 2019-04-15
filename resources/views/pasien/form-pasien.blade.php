@@ -66,7 +66,6 @@
         </div>
         <div class="form-group">
             <label for="inputAddress2">Tanggal Lahir</label>
-            <input type="text" class="form-control datepicker" id="inputAddress2" placeholder="YYYY/mm/dd" name="tanggal_lahir">
         </div>
         <fieldset class="form-group">
             <legend class="col-form-label col-sm-2 pt-0">Status</legend>

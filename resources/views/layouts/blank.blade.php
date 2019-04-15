@@ -65,8 +65,7 @@
             </div>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{url('data-dokter')}}">
-                    <i class="fas fa-user-md"></i>
+
                     <span>Data Dokter</span></a>
             </li>
 
