@@ -40,7 +40,7 @@
         <div class="form-group">
             <label for="inputState">PoliKlinik</label>
             <select id="inputState" class="form-control" name="">
-                <option selected>POLI GIGI</option>
+                <option selected>POLI GIGI</option>   
                 <option>POLI RAMBUT</option>
                 <option>POLI KEPALA</option>
             </select>
